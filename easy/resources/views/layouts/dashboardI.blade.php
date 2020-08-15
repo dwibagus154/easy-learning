@@ -105,7 +105,7 @@
 
                         <ul id="profileMenu" class="unfold unfold-user unfold-light unfold-top unfold-centered position-absolute pt-2 pb-1 mt-4 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="profileMenuInvoker" style="animation-duration: 300ms;">
                             <li class="unfold-item">
-                                <a class="unfold-link d-flex align-items-center text-nowrap" href="">
+                                <a class="unfold-link d-flex align-items-center text-nowrap" href="#">
                                     <span class="unfold-item-icon mr-3">
                                         <i class="gd-user"></i>
                                     </span>
@@ -158,22 +158,22 @@
                         <span class="side-nav-menu-icon d-flex mr-3">
                             <i class="gd-file"></i>
                         </span>
-                        <span class="side-nav-fadeout-on-closed media-body">All Question</span>
+                        <span class="side-nav-fadeout-on-closed media-body">Semua Pertanyaan</span>
                     </a>
                 </li>
                 <!-- End Documentation -->
 
                 <!-- Title -->
-                <li class="sidebar-heading h6">Users</li>
+                <li class="sidebar-heading h6">Pengguna</li>
                 <!-- End Title -->
 
                 <!-- Users -->
                 <li class="side-nav-menu-item side-nav-has-menu">
-                    <a class="side-nav-menu-link media align-items-center" href="" data-target="#subUsers">
+                    <a class="side-nav-menu-link media align-items-center" href="#" data-target="#subUsers">
                         <span class="side-nav-menu-icon d-flex mr-3">
                             <i class="gd-user"></i>
                         </span>
-                        <span class="side-nav-fadeout-on-closed media-body">User</span>
+                        <span class="side-nav-fadeout-on-closed media-body">Pengguna</span>
                         <span class="side-nav-control-icon d-flex">
                             <i class="gd-angle-right side-nav-fadeout-on-closed"></i>
                         </span>
@@ -183,7 +183,7 @@
                     <!-- Users: subUsers -->
                     <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
                         <li class="side-nav-menu-item ">
-                            <a class="nav-link" href="{{ url('/user')}}">My Profile</a>
+                            <a class="nav-link disabled" href="users.html">Profil Anda</a>
                         </li>
                     </ul>
                     <!-- End Users: subUsers -->
@@ -196,7 +196,7 @@
                         <span class="side-nav-menu-icon d-flex mr-3">
                             <i class="gd-settings"></i>
                         </span>
-                        <span class="side-nav-fadeout-on-closed media-body">Settings</span>
+                        <span class="side-nav-fadeout-on-closed media-body">Pengaturan</span>
                     </a>
                 </li>
                 <!-- End Settings -->

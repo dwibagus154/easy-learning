@@ -11,14 +11,10 @@
 @endif
 
 
-@if ($questions)
-<div>anjing</div>
-@endif
-
 
 <div class="d-flex justify-content-between" style="margin-bottom: 50px;">
-    <h1>Semua Pertanyaan</h1>
-    <a href="/question/ask" class="badge badge-primary" style="width: 200px; height: 40px; font-size: 20px; justify-content: center; padding-top: 8px;">Membuat Pertanyaan</a>
+    <h1>All Question</h1>
+    <a href="/question/ask" class="badge badge-primary" style="width: 200px; height: 40px; font-size: 20px; justify-content: center; padding-top: 8px;">Ask a Question</a>
 </div>
 
 

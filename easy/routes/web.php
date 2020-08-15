@@ -25,6 +25,9 @@ Route::post('/question/ask', 'QuestionsController@store');
 Route::get('question/{question}', 'QuestionsController@show');
 Route::resource('question', 'QuestionsController');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/ind', 'HomeController@index1')->name('ind');
+Route::get('/user', 'HomeController@index2')->name('user');
+
 
 Route::get('comment/jawaban/{answer}', 'CommentJawabanController@show');
 Route::post('comment/jawaban/{answer}', 'CommentJawabanController@store');

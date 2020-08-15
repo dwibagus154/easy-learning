@@ -19,7 +19,7 @@
 </div>
 
 <div>
-    <h6>Deskripsi</h6>
+    <h6>Desscription</h6>
     <hr>
     <div class="container">
         <h3>{{$question["description"]}}</h3>
