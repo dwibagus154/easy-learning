@@ -36,4 +36,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $primaryKey = 'id';
+
+    public function answer()
+    {
+        return $this->hasMany(Answer::class);
+    }
+
+    public function question()
+    {
+        return $this->hasMany(Question::class);
+    }
+    public function pcomment()
+    {
+        return $this->hasMany(Pcomment::class);
+    }
+    public function jcomment()
+    {
+        return $this->hasMany(Jcomment::class);
+    }
+    public function reputasi_user()
+    {
+        return $this->hasMany(Reputasi_User::class);
+    }
 }

@@ -48,7 +48,7 @@ class QuestionsController extends Controller
 
         Question::create($request->all());
 
-        return redirect('/question')->with('status', 'Data updated!');
+        return redirect('/question')->with('Success', 'Data updated!');
     }
 
     /**

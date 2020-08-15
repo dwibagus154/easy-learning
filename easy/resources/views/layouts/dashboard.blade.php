@@ -20,6 +20,7 @@
 
     <!-- Template -->
     <link rel="stylesheet" href="{{ asset('dashboard/public/graindashboard/css/graindashboard.css') }}">
+    @stack('head-script')
 
 </head>
 
@@ -30,13 +31,14 @@
             <div class="navbar-brand-wrapper d-flex align-items-center col-auto">
                 <!-- Logo For Mobile View -->
                 <a class="navbar-brand navbar-brand-mobile" href="/">
-                    <img class="img-fluid w-100" src="public/img/logo-mini.png" alt="Graindashboard">
+                    <img class="img-fluid w-100" src="dashboard/public/img/logo-mini.png" alt="Graindashboard">
                 </a>
                 <!-- End Logo For Mobile View -->
 
                 <!-- Logo For Desktop View -->
-                <a class="navbar-brand navbar-brand-desktop" href="/" style="color: black;">
-                    Easy Learning
+                <a class="navbar-brand navbar-brand-desktop" href="/">
+                    <img class="side-nav-show-on-closed" src="dashboard/public/img/logo-mini.png" alt="Graindashboard" style="width: auto; height: 33px;">
+                    <img class="side-nav-hide-on-closed" src="dashboard/public/img/logo.png" alt="Graindashboard" style="width: auto; height: 33px;">
                 </a>
                 <!-- End Logo For Desktop View -->
             </div>
@@ -98,7 +100,7 @@
                         <a id="profileMenuInvoker" class="header-complex-invoker" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#profileMenu" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
                             <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->
                             <span class="mr-md-2 avatar-placeholder">J</span>
-                            <span class="d-none d-md-block">John Doe</span>
+                            <span class="d-none d-md-block">{{ Auth::user()->name }}</span>
                             <i class="gd-angle-down d-none d-md-block ml-2"></i>
                         </a>
 
@@ -157,13 +159,13 @@
                         <span class="side-nav-menu-icon d-flex mr-3">
                             <i class="gd-file"></i>
                         </span>
-                        <span class="side-nav-fadeout-on-closed media-body">All Question</span>
+                        <span class="side-nav-fadeout-on-closed media-body">Semua Pertanyaan</span>
                     </a>
                 </li>
                 <!-- End Documentation -->
 
                 <!-- Title -->
-                <li class="sidebar-heading h6">Users</li>
+                <li class="sidebar-heading h6">Pengguna</li>
                 <!-- End Title -->
 
                 <!-- Users -->
@@ -172,7 +174,7 @@
                         <span class="side-nav-menu-icon d-flex mr-3">
                             <i class="gd-user"></i>
                         </span>
-                        <span class="side-nav-fadeout-on-closed media-body">User</span>
+                        <span class="side-nav-fadeout-on-closed media-body">Pengguna</span>
                         <span class="side-nav-control-icon d-flex">
                             <i class="gd-angle-right side-nav-fadeout-on-closed"></i>
                         </span>
@@ -182,7 +184,7 @@
                     <!-- Users: subUsers -->
                     <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
                         <li class="side-nav-menu-item ">
-                            <a class="nav-link disabled" href="users.html">My Profile</a>
+                            <a class="nav-link disabled" href="users.html">Profil Anda</a>
                         </li>
                     </ul>
                     <!-- End Users: subUsers -->
@@ -195,7 +197,7 @@
                         <span class="side-nav-menu-icon d-flex mr-3">
                             <i class="gd-settings"></i>
                         </span>
-                        <span class="side-nav-fadeout-on-closed media-body">Settings</span>
+                        <span class="side-nav-fadeout-on-closed media-body">Pengaturan</span>
                     </a>
                 </li>
                 <!-- End Settings -->
@@ -263,6 +265,8 @@
         $.GDCore.components.GDChartistBar.init('.js-bar-chart');
         $.GDCore.components.GDChartistDonut.init('.js-donut-chart');
     </script>
+
+    @stack('end-script')
 </body>
 
 </html>

@@ -12,8 +12,11 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image: url("dashboard/public/img/gambar1.jpg");
+                background-size:100%;
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -49,7 +52,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -64,6 +67,7 @@
         </style>
     </head>
     <body>
+        
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -80,9 +84,17 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <!-- <div class="title m-b-md">
                     Laravel
+                </div> -->
+                <div class="py128 product-hero-background d:fc-white">
+                <h1 class="w120 bold center">WELCOME </H1>
+                    <h1 class="w90 mx-auto p-ff-roboto-slab-bold fs-display2 ta-center mb16">We <span class="ff-mono">&lt;3</span> people who code</h1>
+                        <p class="fs-title ta-center w90 wmx4 mx-auto mb24">We build products that empower developers and connect them to solutions that enable productivity, growth, and discovery.</p>
+                    <div class="grid jc-center ai-center fs-body2 sm:fd-column">
+                    </div>
                 </div>
+
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>

@@ -26,4 +26,16 @@ Route::get('question/{question}', 'QuestionsController@show');
 Route::resource('question', 'QuestionsController');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/ind', 'IndonesiaController@index');
+Route::get('comment/jawaban/{answer}', 'CommentJawabanController@show');
+Route::post('comment/jawaban/{answer}', 'CommentJawabanController@store');
+
+Route::get('comment/pertanyaan/{question}', 'CommentPertanyaanController@show');
+Route::post('comment/pertanyaan/{question}', 'CommentPertanyaanController@store');
+
+//Route::get('{id}/answer', 'AnswersController@create');
+Route::post('/answer', 'AnswersController@store');
+
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

@@ -1,6 +1,6 @@
 @extends('../layouts.dashboard')
 
-@section('title', 'Ask')
+@section('title', 'Comment Jawaban')
 
 @push('head-script')
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
@@ -8,44 +8,45 @@
 
 @section('content')
 
-@if(session('success'))
-<div class="alert alert-success">
-    {{ session('success')}}
-</div>
-@endif
+<div style="margin-top: 50px;">
+    <h3>Comment</h3>
+    @foreach ($answer->jcomment as $comment)
+    <div class="card w-100">
+        <div class="row">
+            <div class="col-lg-1">
+                <div style=" text-align: center; justify-content: center; padding: 9px;">
+                    <p style="font-size: 16px;">0 Votes</p>
+                    <p style="font-size: 12px;">0 Coment</p>
+                    <p style="font-size: 16px;">0 Views</p>
+                </div>
+            </div>
+            <div class="col-lg-11">
+                <div class="card-body">
+                    <p class="card-text">{!! $comment->comment !!}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    @endforeach
 
-<h2>Buatlah Pertanyaan ke publik</h2>
-<div class="container">
+</div>
+
+
+<div style="margin-top: 50px;">
     <form action="" method="POST">
         @csrf
         <div class="form-group">
-            <label for="question" class="form-control-label">Inti Pertanyaan</label>
-            <input type="text" name="question" id="question" value="{{ old('question') }}" class="form-control @error('question') is-invalid @enderror" placeholder="Masukkan Inti Pertanyaan" />
+            <label for="comment" class="form-control-label" style="font-size: 24px;">komen atas jawaban ini</label>
+            <textarea name="comment" id="comment" rows="5" class="ckeditor form-control my-editor">
+            {{ old('comment') }}</textarea>
             <small id="passwordHelpBlock" class="form-text text-muted">
-                Harus spesifik, bayangkan kamu bertanya ke orang lain
+                Berisi komen atas jawaban yang ditanyakan
             </small>
         </div>
-        <div class="form-group">
-            <label for="description" class="form-control-label">Deskripsi</label>
-            <textarea name="description" id="description" rows="5" class="ckeditor form-control my-editor">
-            {{ old('description') }}</textarea>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-                Berisi Kode kode yang ingin ditanyakan
-            </small>
-        </div>
-        <div class="form-group">
-            <label for="concept" class="form-control-label">Tipe</label>
-            <div class="col-md-6" style="margin-left: -14px;">
-                <input type="text" name="concept" id="concept" rows="3" class="form-control">
-                {{ old('concept') }}</input>
-                <small id="passwordHelpBlock" class="form-text text-muted">
-                    Bahasa Pemrogramman yang ditanyakan
-                </small>
-            </div>
-        </div>
-        <input type="text" value="0" name="isvote" style="display: none;"></input>
-        <input type="text" value="{{ $user['id']}}" name="user_id" style="display: none;"></input>
-        <button type="submit" class="btn btn-primary">Buat</button>
+        <input type="text" value="{{$answer->id}}" name="answer_id" style="display: none;"></input>
+        <input type="text" value="{{$answer->user->id}}" name="user_id" style="display: none;"></input>
+        <button type="submit" class="btn btn-primary">Komen</button>
     </form>
 </div>
 
